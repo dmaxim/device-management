@@ -7,7 +7,23 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
+        <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.7.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MxInfo.DeviceManager.Business\MxInfo.DeviceManager.Business.csproj" />
+      <ProjectReference Include="..\MxInfo.DeviceManager.Domain\MxInfo.DeviceManager.Domain.csproj" />
+      <ProjectReference Include="..\MxInfo.DeviceManager.Infrastructure\MxInfo.DeviceManager.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\EthernetNetworkController\Controllers\" />
+      <Folder Include="Areas\EthernetNetworkController\Data\" />
+      <Folder Include="Areas\EthernetNetworkController\Models\" />
+      <Folder Include="Areas\EthernetNetworkController\Views\" />
     </ItemGroup>
 
 </Project>
