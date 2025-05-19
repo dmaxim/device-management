@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Api", "MxInfo.DeviceManager.Api\MxInfo.DeviceManager.Api.csproj", "{01D73E44-21DB-4D3E-8B4A-C6B11A5EB23B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Domain", "MxInfo.DeviceManager.Domain\MxInfo.DeviceManager.Domain.csproj", "{18D79C9A-5E2F-47DC-B3FC-778C1FDAF0C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Data", "MxInfo.DeviceManager.Data\MxInfo.DeviceManager.Data.csproj", "{88F02D5F-F099-4560-ADBA-474ADE954AF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01D73E44-21DB-4D3E-8B4A-C6B11A5EB23B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D73E44-21DB-4D3E-8B4A-C6B11A5EB23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D73E44-21DB-4D3E-8B4A-C6B11A5EB23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D73E44-21DB-4D3E-8B4A-C6B11A5EB23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D79C9A-5E2F-47DC-B3FC-778C1FDAF0C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D79C9A-5E2F-47DC-B3FC-778C1FDAF0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D79C9A-5E2F-47DC-B3FC-778C1FDAF0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D79C9A-5E2F-47DC-B3FC-778C1FDAF0C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@MxInfo.DeviceManager_HostAddress = http://localhost:5115
+
+GET {{MxInfo.DeviceManager_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
