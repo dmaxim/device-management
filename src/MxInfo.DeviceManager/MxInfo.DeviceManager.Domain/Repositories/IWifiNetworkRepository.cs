@@ -8,5 +8,5 @@ namespace MxInfo.DeviceManager.Domain.Repositories;
 /// </summary>
 public interface IWifiNetworkRepository : IRepository<WifiNetwork>
 {
-    
+    Task<WifiNetwork> GetById(int id);
 }

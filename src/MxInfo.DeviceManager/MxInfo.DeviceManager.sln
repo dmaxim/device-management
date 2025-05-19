@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Data", "MxInfo.DeviceManager.Data\MxInfo.DeviceManager.Data.csproj", "{88F02D5F-F099-4560-ADBA-474ADE954AF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Business", "MxInfo.DeviceManager.Business\MxInfo.DeviceManager.Business.csproj", "{D60C08B7-A0EC-43A6-B270-0789B9857578}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F02D5F-F099-4560-ADBA-474ADE954AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60C08B7-A0EC-43A6-B270-0789B9857578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60C08B7-A0EC-43A6-B270-0789B9857578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60C08B7-A0EC-43A6-B270-0789B9857578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60C08B7-A0EC-43A6-B270-0789B9857578}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

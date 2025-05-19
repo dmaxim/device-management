@@ -5,5 +5,8 @@ namespace MxInfo.DeviceManager.Domain.Exceptions;
 /// </summary>
 public class MxInfoApplicationStateException : MxInfoBaseException
 {
+    public MxInfoApplicationStateException(string message) : base(message) { }
+    public MxInfoApplicationStateException(string message, Exception innerException) : base(message, innerException) { }
+    
     public override int Status { get; } = 500;
 }

@@ -6,5 +6,8 @@ namespace MxInfo.DeviceManager.Domain.Exceptions;
 /// </summary>
 public class MxInfoNotFoundException : MxInfoBaseException
 {
+    public MxInfoNotFoundException(string message) : base(message) { }
+    public MxInfoNotFoundException(string message, Exception innerException) : base(message, innerException) { }
+    
     public override int Status { get; } = 404;
 }
