@@ -8,18 +8,18 @@ namespace MxInfo.DeviceManager.Tests.Unit.BusinessTests;
 public class DeviceManagerGetById(BusinessTestFixture fixture)
 {
     [Fact]
-    public void Returns_Device_By_Id()
+    public async Task Returns_Device_By_Id()
     {
         var deviceManager = fixture.GetDeviceManager();
-        var device = deviceManager.GetById(fixture.TestDeviceId);
+        var device = await deviceManager.GetById(fixture.TestDeviceId);
         Assert.NotNull(device);
         
     }
 
     [Fact]
-    public void Throws_Expected_Not_Found_Exception_For_Device_That_Does_Not_Exist()
+    public async Task Throws_Expected_Not_Found_Exception_For_Device_That_Does_Not_Exist()
     {
         var deviceManager = fixture.GetDeviceManager();
-        _ = Assert.ThrowsAsync<MxInfoNotFoundException>(() => deviceManager.GetById(fixture.DeviceIdThatDoesNotExist));
+        _ = await Assert.ThrowsAsync<MxInfoNotFoundException>(() => deviceManager.GetById(fixture.DeviceIdThatDoesNotExist));
     }
 }
