@@ -38,3 +38,5 @@ EXEC sp_addrolemember 'DeviceManagerRole', 'DeviceManagerApp';
 
 GO
 
+
+

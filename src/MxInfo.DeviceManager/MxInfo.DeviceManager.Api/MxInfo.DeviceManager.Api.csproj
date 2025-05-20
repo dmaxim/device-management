@@ -17,6 +17,7 @@
       <ProjectReference Include="..\MxInfo.DeviceManager.Business\MxInfo.DeviceManager.Business.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.Domain\MxInfo.DeviceManager.Domain.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.Infrastructure\MxInfo.DeviceManager.Infrastructure.csproj" />
+      <ProjectReference Include="..\MxInfo.DeviceManager.ServiceDefaults\MxInfo.DeviceManager.ServiceDefaults.csproj" />
     </ItemGroup>
 
     <ItemGroup>

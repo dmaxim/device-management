@@ -5,6 +5,8 @@ using MxInfo.DeviceManager.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -53,5 +55,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapDefaultEndpoints();
 
 app.Run();
