@@ -6,7 +6,7 @@ namespace MxInfo.DeviceManager.Data.Contexts;
 /// <summary>
 /// Entity Framework Core DbContext for DeviceManager
 /// </summary>
-public class DeviceManagerEntityContext : DbContext, IDeviceManagerEntityContext
+public class DeviceManagerEntityContext(DbContextOptions<DeviceManagerEntityContext> options) : DbContext(options), IDeviceManagerEntityContext
 {
     public DbContext Context => this;
 

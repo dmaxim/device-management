@@ -23,5 +23,8 @@ public class WifiNetworkEntityConfiguration : IEntityTypeConfiguration<WifiNetwo
         builder.Property(properties => properties.Description)
             .HasColumnName("WifiNetworkDescription")
             .IsUnicode(false);
+        
+        builder.Property(properties => properties.Uid)
+            .HasColumnName("WifiNetworkUid");
     }
 }

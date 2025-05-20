@@ -23,5 +23,8 @@ public class EthernetNetworkEntityConfiguration : IEntityTypeConfiguration<Ether
         builder.Property(properties => properties.Description)
             .HasColumnName("EthernetNetworkDescription")
             .IsUnicode(false);
+        
+        builder.Property(properties => properties.Uid)
+            .HasColumnName("EthernetNetworkUid");
     }
 }

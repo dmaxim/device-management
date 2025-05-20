@@ -35,6 +35,7 @@ if (secureConfiguration.UseKeyVault)
     builder.Configuration.AddAzureKeyVault(secretClient, new KeyVaultSecretManager());    
 }
 
+builder.Services.AddDeviceManagerApiDependencies(builder.Configuration);
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();

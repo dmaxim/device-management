@@ -11,7 +11,7 @@ public class DeviceEntityConfiguration: IEntityTypeConfiguration<Device>
 {
     public void Configure(EntityTypeBuilder<Device> builder)
     {
-        builder.ToTable(DataResources.DefaultSchema, DataResources.DefaultSchema);
+        builder.ToTable(DataResources.DeviceTable, DataResources.DefaultSchema);
         
         builder.Property(properties => properties.Id)
             .HasColumnName("DeviceId");
