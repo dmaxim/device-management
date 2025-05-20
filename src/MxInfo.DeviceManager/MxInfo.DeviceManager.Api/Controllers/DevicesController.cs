@@ -7,7 +7,7 @@ namespace MxInfo.DeviceManager.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class DeviceController(IDeviceManager deviceManager): ControllerBase
+public class DevicesController(IDeviceManager deviceManager): ControllerBase
 {
 
     [HttpGet]

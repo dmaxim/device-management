@@ -7,7 +7,7 @@ namespace MxInfo.DeviceManager.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class EthernetNetworkController(IEthernetNetworkManager ethernetNetworkManager) : ControllerBase
+public class EthernetNetworksController(IEthernetNetworkManager ethernetNetworkManager) : ControllerBase
 {
     
     [HttpGet]

@@ -7,7 +7,7 @@ namespace MxInfo.DeviceManager.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WifiNetworkController(IWifiNetworkManager wifiNetworkManager) : ControllerBase
+    public class WifiNetworksController(IWifiNetworkManager wifiNetworkManager) : ControllerBase
     {
 
         [HttpGet]
