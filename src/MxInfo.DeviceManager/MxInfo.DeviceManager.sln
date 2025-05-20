@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Infrastructure", "MxInfo.DeviceManager.Infrastructure\MxInfo.DeviceManager.Infrastructure.csproj", "{F2AAA6E0-9573-4326-BD9D-25188A9DD1A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{53B3C0BE-F817-4964-982C-E30B98A4B927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Tests.Unit", "MxInfo.DeviceManager.Tests.Unit\MxInfo.DeviceManager.Tests.Unit.csproj", "{0B7586E9-9B14-4B8B-907B-070A9A318271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,12 @@ Global
 		{F2AAA6E0-9573-4326-BD9D-25188A9DD1A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2AAA6E0-9573-4326-BD9D-25188A9DD1A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2AAA6E0-9573-4326-BD9D-25188A9DD1A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7586E9-9B14-4B8B-907B-070A9A318271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7586E9-9B14-4B8B-907B-070A9A318271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7586E9-9B14-4B8B-907B-070A9A318271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7586E9-9B14-4B8B-907B-070A9A318271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B7586E9-9B14-4B8B-907B-070A9A318271} = {53B3C0BE-F817-4964-982C-E30B98A4B927}
 	EndGlobalSection
 EndGlobal
