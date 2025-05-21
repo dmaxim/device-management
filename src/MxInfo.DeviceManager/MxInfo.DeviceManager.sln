@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.AppHos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.ServiceDefaults", "MxInfo.DeviceManager.ServiceDefaults\MxInfo.DeviceManager.ServiceDefaults.csproj", "{A243792C-CF9D-42BF-A92C-8DD983CCCC6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxInfo.DeviceManager.Agent.Api", "MxInfo.DeviceManager.Agent.Api\MxInfo.DeviceManager.Agent.Api.csproj", "{70523C6C-7A2E-45F5-9597-15174B0EA7C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{A243792C-CF9D-42BF-A92C-8DD983CCCC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A243792C-CF9D-42BF-A92C-8DD983CCCC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A243792C-CF9D-42BF-A92C-8DD983CCCC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70523C6C-7A2E-45F5-9597-15174B0EA7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70523C6C-7A2E-45F5-9597-15174B0EA7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70523C6C-7A2E-45F5-9597-15174B0EA7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70523C6C-7A2E-45F5-9597-15174B0EA7C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0B7586E9-9B14-4B8B-907B-070A9A318271} = {53B3C0BE-F817-4964-982C-E30B98A4B927}
