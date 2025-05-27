@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MxInfo.DeviceManager.Business.Managers;
+using MxInfo.DeviceManager.Agent.Business.Managers;
+
 
 namespace MxInfo.DeviceManager.Infrastructure;
 

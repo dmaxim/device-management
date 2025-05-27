@@ -1,9 +1,9 @@
-namespace MxInfo.DeviceManager.Business.Managers;
+namespace MxInfo.DeviceManager.Agent.Business.Managers;
 
 /// <summary>
 ///  Contract for interactive with OpenAI
 /// </summary>
 public interface IOpenAiManager
 {
-    string GetMessage();
+    Task<string> GetMessage();
 }

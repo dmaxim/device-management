@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MxInfo.DeviceManager.Business.Managers;
+using MxInfo.DeviceManager.Agent.Business.Managers;
+
 
 namespace MxInfo.DeviceManager.Agent.Api.Controllers;
 
@@ -8,8 +9,8 @@ namespace MxInfo.DeviceManager.Agent.Api.Controllers;
 public class OpenAiController(IOpenAiManager openAiManager) : ControllerBase
 {
     [HttpGet(Name = "GetResponse")]
-    public IActionResult Get()
+    public async Task<IActionResult> Get()
     {
-        return Ok(openAiManager.GetMessage());
+        return Ok(await openAiManager.GetMessage());
     }
 }

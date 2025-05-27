@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MxInfo.DeviceManager.Agent.Business\MxInfo.DeviceManager.Agent.Business.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.Business\MxInfo.DeviceManager.Business.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.Data\MxInfo.DeviceManager.Data.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.Domain\MxInfo.DeviceManager.Domain.csproj" />
