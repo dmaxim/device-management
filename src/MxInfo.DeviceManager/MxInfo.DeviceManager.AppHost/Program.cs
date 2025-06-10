@@ -1,13 +1,15 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var deviceManagerApi = builder.AddProject<Projects.MxInfo_DeviceManager_Api>("deviceManagerApi");
-
 var agentApi = builder.AddProject<Projects.MxInfo_DeviceManager_Agent_Api>("agentApi");
 
+var deviceManagerApi = builder.AddProject<Projects.MxInfo_DeviceManager_Api>("deviceManagerApi")
+    .WithReference(agentApi);
+
 builder.AddProject<Projects.MxInfo_DeviceManager_App>("deviceManagerApp")
+    //.WithReference(agentApi)
     .WithReference(deviceManagerApi)
-    .WithReference(agentApi)
-  //  .WithHttpEndpoint(env: "PORT")
+    .WaitFor(deviceManagerApi)
+    //  .WithHttpEndpoint(env: "PORT")
     .WithExternalHttpEndpoints()
     .PublishAsDockerFile();
     

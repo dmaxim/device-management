@@ -1,13 +1,17 @@
 using Azure.Extensions.AspNetCore.Configuration.Secrets;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
+using MxInfo.DeviceManager.Api.Services;
 using MxInfo.DeviceManager.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-// Add services to the container.
+builder.Services.AddHttpClient<IAgentClient, AgentClient>(client =>
+{
+    client.BaseAddress = new Uri("https+http://agentApi");
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
