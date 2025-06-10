@@ -3,11 +3,15 @@ using MxInfo.DeviceManager.App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();  // Add default services via the extension method from the ServiceDefaults project allowing for service discovery, configuration, and logging.
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddDeviceManagerDependencies(builder.Configuration);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,4 +31,5 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
+app.MapDefaultEndpoints();
 app.Run();

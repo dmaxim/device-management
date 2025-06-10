@@ -9,7 +9,11 @@ public static class DeviceManagerAppDependencies
     public static IServiceCollection AddDeviceManagerDependencies(this IServiceCollection services, IConfiguration configuration)
     {
         //AddConfiguration(services, configuration);
-        services.AddScoped<IDeviceApiClient, DeviceApiClient>();
+        services.AddHttpClient<IDeviceApiClient, DeviceApiClient>(client =>
+        {
+            client.BaseAddress = new Uri("https+http://devicemanagerapi");
+        });
+       // services.AddScoped<IDeviceApiClient, DeviceApiClient>();
         return services;
     }
     
