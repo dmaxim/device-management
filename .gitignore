@@ -438,3 +438,5 @@ terraform.rc
 
 
 **/.idea/*
+
+.DS_Store

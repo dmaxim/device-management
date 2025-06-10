@@ -1,5 +1,8 @@
+using System.ComponentModel;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Connectors.OpenAI;
 using MxInfo.DeviceManager.Agent.Business.DeviceManagerFunctions;
 using OpenAI;
 using OpenAI.Chat;
@@ -152,5 +155,20 @@ public class OpenAiManager(IOptions<OpenAiConfiguration> configuration) : IOpenA
                 Console.WriteLine(message.Content[0].Text.Trim());
             }
         }
+    }
+    
+    public async Task GetDeviceInfo([Description("Device Serial Number to get the details for")] string serialNumber)
+    {
+        var kernel = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId: _configuration.OpenAiModel,
+            apiKey: _configuration.OpenAiKey).Build();
+
+        kernel.ImportPluginFromType<DeviceManagerPlugins>();
+
+        var settings = new OpenAIPromptExecutionSettings
+        {
+            ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+        };
+        
+        var result = await kernel.InvokePromptAsync("Get device information", new KernelArguments(settings));
     }
 }

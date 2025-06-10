@@ -19,6 +19,7 @@
     <ItemGroup>
       <ProjectReference Include="..\MxInfo.DeviceManager.Agent.Api\MxInfo.DeviceManager.Agent.Api.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.Api\MxInfo.DeviceManager.Api.csproj" />
+      <ProjectReference Include="..\MxInfo.DeviceManager.App\MxInfo.DeviceManager.App.csproj" />
     </ItemGroup>
 
     <Target Name="RestoreNpm" BeforeTargets="Build" Condition=" '$(DesignTimeBuild)' != 'true' ">

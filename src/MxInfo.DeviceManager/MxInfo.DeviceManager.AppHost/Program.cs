@@ -2,7 +2,14 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var deviceManagerApi = builder.AddProject<Projects.MxInfo_DeviceManager_Api>("deviceManagerApi");
 
-builder.AddProject<Projects.MxInfo_DeviceManager_Agent_Api>("agentApi");
+var agentApi = builder.AddProject<Projects.MxInfo_DeviceManager_Agent_Api>("agentApi");
+
+builder.AddProject<Projects.MxInfo_DeviceManager_App>("deviceManagerApp")
+    .WithReference(deviceManagerApi)
+    .WithReference(agentApi)
+  //  .WithHttpEndpoint(env: "PORT")
+    .WithExternalHttpEndpoints()
+    .PublishAsDockerFile();
     
 builder.AddNpmApp("react", "../MxInfo.DeviceManager.UI", "start")
     .WithReference(deviceManagerApi)
