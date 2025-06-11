@@ -3,9 +3,11 @@ using Microsoft.Extensions.Logging;
 
 namespace MxInfo.DeviceManager.Tests.Integration.Infrastructure;
 
+// ReSharper disable once ClassNeverInstantiated.Global
 public class DeviceManagerApiFixture : IDisposable
 {
     private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(30);
+    private const string HostName = "deviceManagerApi";
     public HttpClient ApiClient { get; private set; } = null!;
     public CancellationToken DefaultCancellationToken { get; private set; }
     
@@ -16,10 +18,13 @@ public class DeviceManagerApiFixture : IDisposable
     }
 
     private DistributedApplication? _deviceManagerApiApp = null;
+
     private async Task InitializeAppHost()
     {
         DefaultCancellationToken = new CancellationTokenSource(DefaultTimeout).Token;
-        var appHost = await DistributedApplicationTestingBuilder.CreateAsync<Projects.MxInfo_DeviceManager_AppHost>(DefaultCancellationToken);
+        var appHost =
+            await DistributedApplicationTestingBuilder.CreateAsync<Projects.MxInfo_DeviceManager_AppHost>(
+                DefaultCancellationToken);
         appHost.Services.AddLogging(logging =>
         {
             logging.SetMinimumLevel(LogLevel.Debug);
@@ -32,13 +37,17 @@ public class DeviceManagerApiFixture : IDisposable
         {
             clientBuilder.AddStandardResilienceHandler();
         });
-    
-        _deviceManagerApiApp = await appHost.BuildAsync(DefaultCancellationToken).WaitAsync(DefaultTimeout, DefaultCancellationToken);
-        await _deviceManagerApiApp.StartAsync(DefaultCancellationToken).WaitAsync(DefaultTimeout, DefaultCancellationToken);
-    
+
+        _deviceManagerApiApp = await appHost.BuildAsync(DefaultCancellationToken)
+            .WaitAsync(DefaultTimeout, DefaultCancellationToken);
+        await _deviceManagerApiApp.StartAsync(DefaultCancellationToken)
+            .WaitAsync(DefaultTimeout, DefaultCancellationToken);
+
         // Act
-        ApiClient = _deviceManagerApiApp.CreateHttpClient("deviceManagerApi");
-        await _deviceManagerApiApp.ResourceNotifications.WaitForResourceHealthyAsync("deviceManagerApi", DefaultCancellationToken).WaitAsync(DefaultTimeout, DefaultCancellationToken);
+        ApiClient = _deviceManagerApiApp.CreateHttpClient(HostName);
+        await _deviceManagerApiApp.ResourceNotifications.WaitForResourceHealthyAsync(HostName, DefaultCancellationToken)
+            .WaitAsync(DefaultTimeout, DefaultCancellationToken);
+
     }
 
     public void Dispose()

@@ -11,7 +11,6 @@ public partial class Devices(IDeviceApiClient deviceApiClient) : ComponentBase
     
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(2000);
         DeviceList = await deviceApiClient.GetDevicesAsync().ConfigureAwait(false);
     }
 }
