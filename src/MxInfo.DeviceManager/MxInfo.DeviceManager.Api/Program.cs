@@ -42,7 +42,7 @@ if (secureConfiguration.UseKeyVault)
 }
 
 builder.Services.AddDeviceManagerApiDependencies(builder.Configuration);
-builder.Services.AddHealthChecks();
+//builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -53,7 +53,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapHealthChecks("/healthz");
+//app.MapHealthChecks("/healthz");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
