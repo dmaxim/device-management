@@ -1,0 +1,6 @@
+@MxInfo.DeviceManager.Agent.Api_HostAddress = http://localhost:5278
+
+GET {{MxInfo.DeviceManager.Agent.Api_HostAddress}}/getresponse/
+Accept: application/json
+
+###

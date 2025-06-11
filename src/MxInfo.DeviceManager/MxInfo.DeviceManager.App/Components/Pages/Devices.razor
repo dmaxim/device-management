@@ -1,0 +1,36 @@
+@page "/devices"
+@attribute [StreamRendering(true)]
+
+<h1>Devices</h1>
+
+@if (DeviceList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-light">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Device Id</th>
+            <th>Device Name</th>
+            <th>Device Uid</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var device in DeviceList)
+        {
+            <tr>
+                <td><img alt="devicePicture" src="images/device.png" class="rounded-circle device-detail-img"/></td>
+                <td>@device.Id</td>
+                <td>@device.Name</td>
+                <td>@device.Uid</td>
+                <td>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
