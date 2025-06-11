@@ -1,3 +1,6 @@
+
+using MxInfo.DeviceManager.AppDependencies.VoteApp;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 var agentApi = builder.AddProject<Projects.MxInfo_DeviceManager_Agent_Api>("agentApi");
@@ -23,4 +26,6 @@ builder.AddNpmApp("react", "../MxInfo.DeviceManager.UI", "start")
 //builder.AddDockerfile()
 //builder.AddProject()
 
+builder.AddVoteApp("voteApp", 8080);
+    
 builder.Build().Run();
