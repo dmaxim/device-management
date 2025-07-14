@@ -30,4 +30,7 @@ public class DevicesController(IDeviceManager deviceManager, IAgentClient agentC
 
         return Created();
     }
+    
+    
+    
 }
