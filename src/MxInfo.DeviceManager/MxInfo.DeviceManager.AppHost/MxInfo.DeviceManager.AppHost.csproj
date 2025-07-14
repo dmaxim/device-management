@@ -21,6 +21,7 @@
       <ProjectReference Include="..\MxInfo.DeviceManager.Api\MxInfo.DeviceManager.Api.csproj" />
       <ProjectReference Include="..\MxInfo.DeviceManager.AppDependencies\MxInfo.DeviceManager.AppDependencies.csproj" IsAspireProjectResource="false" />
       <ProjectReference Include="..\MxInfo.DeviceManager.App\MxInfo.DeviceManager.App.csproj" />
+      <ProjectReference Include="..\MxInfo.DeviceManager.Config.Api\MxInfo.DeviceManager.Config.Api.csproj" />
     </ItemGroup>
 
     <Target Name="RestoreNpm" BeforeTargets="Build" Condition=" '$(DesignTimeBuild)' != 'true' ">

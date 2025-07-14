@@ -1,0 +1,6 @@
+@MxInfo.DeviceManager.Config.Api_HostAddress = http://localhost:5070
+
+GET {{MxInfo.DeviceManager.Config.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
