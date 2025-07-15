@@ -30,8 +30,4 @@
     <ProjectReference Include="..\MxInfo.DeviceManager.Tests.Unit\MxInfo.DeviceManager.Tests.Unit.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ContractTests\" />
-  </ItemGroup>
-
 </Project>

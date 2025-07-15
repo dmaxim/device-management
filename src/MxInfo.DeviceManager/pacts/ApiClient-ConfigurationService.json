@@ -15,7 +15,32 @@
         "path": "/deviceConfiguration/123"
       },
       "response": {
+        "headers": {
+          "Content-Type": "application/json"
+        },
         "status": 200
+      }
+    },
+    {
+      "description": "A valid POST request to publish configuration",
+      "providerStates": [
+        {
+          "name": "Configuration can be published"
+        }
+      ],
+      "request": {
+        "body": {
+          "PublisherId": "123e4567-e89b-12d3-a456-426614174000",
+          "Version": 1
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/deviceConfiguration/123"
+      },
+      "response": {
+        "status": 201
       }
     }
   ],
