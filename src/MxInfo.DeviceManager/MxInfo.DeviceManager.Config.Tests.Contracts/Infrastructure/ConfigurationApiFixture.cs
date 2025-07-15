@@ -3,7 +3,7 @@ using Aspire.Hosting.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace MxInfo.DeviceManager.Config.Tests.Contracts;
+namespace MxInfo.DeviceManager.Config.Tests.Contracts.Infrastructure;
 
 // ReSharper disable once ClassNeverInstantiated.Global
 public class ConfigurationApiFixture : IDisposable
@@ -31,8 +31,8 @@ public class ConfigurationApiFixture : IDisposable
         {
             logging.SetMinimumLevel(LogLevel.Debug);
             // Override the logging filters from the app's configuration
-            logging.AddFilter(appHost.Environment.ApplicationName, LogLevel.Debug);
-            logging.AddFilter("Aspire.", LogLevel.Debug);
+            FilterLoggingBuilderExtensions.AddFilter((ILoggingBuilder)logging, appHost.Environment.ApplicationName, LogLevel.Debug);
+            FilterLoggingBuilderExtensions.AddFilter((ILoggingBuilder)logging, "Aspire.", LogLevel.Debug);
             // To output logs to the xUnit.net ITestOutputHelper, consider adding a package from https://www.nuget.org/packages?q=xunit+logging
         });
         appHost.Services.ConfigureHttpClientDefaults(clientBuilder =>
