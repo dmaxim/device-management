@@ -1,4 +1,4 @@
-namespace MxInfo.DeviceManager.Config.Tests.Contracts;
+namespace MxInfo.DeviceManager.Config.Tests.Contracts.Infrastructure;
 
 /// <summary>
 /// Test fixture collection for validation of the Config API

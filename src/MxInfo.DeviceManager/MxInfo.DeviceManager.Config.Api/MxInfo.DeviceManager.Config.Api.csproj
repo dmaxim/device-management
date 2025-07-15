@@ -14,9 +14,4 @@
       <ProjectReference Include="..\MxInfo.DeviceManager.ServiceDefaults\MxInfo.DeviceManager.ServiceDefaults.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
-            <_Parameter1>MxInfo.DeviceManager.Config.Api.Tests</_Parameter1>
-        </AssemblyAttribute>
-    </ItemGroup>
 </Project>

@@ -29,10 +29,4 @@
       <ProjectReference Include="..\MxInfo.DeviceManager.Config.Api\MxInfo.DeviceManager.Config.Api.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="appsettings.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>
