@@ -25,8 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MxInfo.DeviceManager.Api\MxInfo.DeviceManager.Api.csproj" />
     <ProjectReference Include="..\MxInfo.DeviceManager.AppHost\MxInfo.DeviceManager.AppHost.csproj" />
     <ProjectReference Include="..\MxInfo.DeviceManager.Tests.Unit\MxInfo.DeviceManager.Tests.Unit.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ContractTests\" />
   </ItemGroup>
 
 </Project>

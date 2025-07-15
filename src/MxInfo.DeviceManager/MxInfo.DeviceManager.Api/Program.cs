@@ -1,6 +1,7 @@
 using Azure.Extensions.AspNetCore.Configuration.Secrets;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
+using Microsoft.Extensions.Options;
 using MxInfo.DeviceManager.Api.Services;
 using MxInfo.DeviceManager.Infrastructure;
 
@@ -15,6 +16,13 @@ builder.Services.AddHttpClient<IAgentClient, AgentClient>(client =>
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddHttpClient<IConfigurationApiClient, ConfigurationApiClient>(client =>
+{
+  
+    client.BaseAddress = new Uri("https+http://deviceConfigApi");
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -40,6 +48,7 @@ if (secureConfiguration.UseKeyVault)
 
     builder.Configuration.AddAzureKeyVault(secretClient, new KeyVaultSecretManager());    
 }
+
 
 builder.Services.AddDeviceManagerApiDependencies(builder.Configuration);
 //builder.Services.AddHealthChecks();

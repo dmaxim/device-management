@@ -13,7 +13,16 @@ public class DeviceManagerApiTests(DeviceManagerApiFixture testFixture)
 
         var response = await testFixture.ApiClient.GetAsync("/devices", testFixture.DefaultCancellationToken);
     
-        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task GetDeviceConfigurationReturnsOkStatusCode()
+    {
+        var deviceId = 1;
+
+        var response = await testFixture.ApiClient.GetAsync($"/deviceConfiguration/{deviceId}", testFixture.DefaultCancellationToken);
+
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 }
