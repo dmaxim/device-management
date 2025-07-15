@@ -1,3 +1,6 @@
+using System.Text.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using PactNet;
 using Xunit.Abstractions;
 
@@ -19,7 +22,13 @@ public class ConfigurationApiFixture
         {
             PactDir = Path.Join("..", "..", "..", "..", "pacts"),
             Outputters = [new XUnitOutput(outputHelper)],
-            LogLevel = PactLogLevel.Debug 
+            LogLevel = PactLogLevel.Debug
+            // DefaultJsonSettings = new JsonSerializerOptions
+            // {
+            //     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            //     WriteIndented = true,
+            //     PropertyNameCaseInsensitive = true
+            // }
         };
      
         PactBuilder = Pact.V3("ApiClient", "ConfigurationService", config)
