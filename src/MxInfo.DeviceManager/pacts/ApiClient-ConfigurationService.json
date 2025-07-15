@@ -15,8 +15,12 @@
         "path": "/deviceConfiguration/123"
       },
       "response": {
+        "body": {
+          "configurationData": "Configuration data for device 123",
+          "deviceId": 123
+        },
         "headers": {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json; charset=utf-8"
         },
         "status": 200
       }

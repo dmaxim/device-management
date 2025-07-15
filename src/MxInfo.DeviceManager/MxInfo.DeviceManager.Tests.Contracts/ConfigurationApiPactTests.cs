@@ -1,4 +1,6 @@
 ﻿using System.Net;
+using System.Net.Http.Json;
+using MxInfo.DeviceManager.Config.Api.Models;
 using MxInfo.DeviceManager.Tests.Contracts.Infrastructure;
 using MxInfo.DeviceManager.Tests.Contracts.Models;
 using PactNet;
@@ -6,11 +8,9 @@ using Xunit.Abstractions;
 
 namespace MxInfo.DeviceManager.Tests.Contracts;
 
-
 /// <summary>
 /// Tests to generate the Pact for the Configuration API.
 /// </summary>
-/// <param name="fixture"></param>
 [Collection(nameof(ConfigurationApiFixtureCollection))]
 public class ConfigurationApiPactTests
 {
@@ -25,21 +25,27 @@ public class ConfigurationApiPactTests
     public async Task HandlesGetConfiguration()
     {
         var port = 9001;
-
+        var deviceId = 123;
 
         _fixture.PactBuilder.UponReceiving("A valid GET request for configuration data")
             .Given("Configuration data is available")
-            .WithRequest(HttpMethod.Get, "/deviceConfiguration/123")
+            .WithRequest(HttpMethod.Get, $"/deviceConfiguration/{deviceId}")
             .WillRespond()
             .WithStatus(HttpStatusCode.OK)
-            .WithHeader("Content-Type", "application/json");
+            .WithHeader("Content-Type", "application/json; charset=utf-8")
+            .WithJsonBody(new DeviceConfiguration
+            {
+                DeviceId = deviceId,
+                ConfigurationData = $"Configuration data for device {deviceId}"
+            });
 
 
         await _fixture.PactBuilder.VerifyAsync(async ctx =>
         {
             var client = new ConfigurationApiClient(new Uri($"http://localhost:{port}"));
-            var response = await client.GetConfiguration(123).ConfigureAwait(false);
+            var response = await client.GetConfiguration(deviceId).ConfigureAwait(false);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Contains(deviceId.ToString(), response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
 
 
         });
