@@ -1,0 +1,34 @@
+{
+  "consumer": {
+    "name": "ApiClient"
+  },
+  "interactions": [
+    {
+      "description": "A valid GET request for configuration data",
+      "providerStates": [
+        {
+          "name": "Configuration data is available"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/deviceConfiguration/123"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pactRust": {
+      "ffi": "0.4.27",
+      "models": "1.2.8"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "ConfigurationService"
+  }
+}

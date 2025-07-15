@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MxInfo.DeviceManager.Config.Api.Models;
 
 namespace MxInfo.DeviceManager.Config.Api.Controllers;
 
@@ -27,19 +28,22 @@ public class DeviceConfigurationController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id }, null);
     }
 
-    
-    
+
+
     [HttpGet(template: "{id:int}", Name = "GetDeviceConfiguration")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Get(int id)
+    public DeviceConfiguration? Get(int id)
     {
-        if(id <= 0)
+        if (id <= 0)
         {
-           return NotFound();
+            return null;
         }
-
-        return Ok();
+        return new DeviceConfiguration
+        {
+            DeviceId = id,
+            ConfigurationData = $"Configuration data for device {id}"
+        };
     }
 }
