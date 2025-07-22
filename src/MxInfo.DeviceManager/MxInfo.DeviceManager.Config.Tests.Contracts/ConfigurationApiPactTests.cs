@@ -28,13 +28,29 @@ public class ConfigurationApiPactTests
             {
                 new XunitOutput(_output)
             }
+            
         };
 
-        var pactVerifier = new PactVerifier("ConfigService", config);
-        var pactFile = new FileInfo(Path.Join("..", "..", "..", "..", "pacts", "ApiClient-ConfigurationService.json"));
+        var pactVerifier = new PactVerifier("ConfigurationService", config);
+        // var pactFile = new FileInfo(Path.Join("..", "..", "..", "..", "pacts", "ApiClient-ConfigurationService.json"));
+        // pactVerifier.WithHttpEndpoint(_fixture.ApiClient.BaseAddress)
+        //     .WithFileSource(pactFile)
+        //     //.WithProviderStateUrl(new Uri($"{_pactServiceUri}/provider-states"))
+        //     .Verify();
+        
         pactVerifier.WithHttpEndpoint(_fixture.ApiClient.BaseAddress)
-            .WithFileSource(pactFile)
-            //.WithProviderStateUrl(new Uri($"{_pactServiceUri}/provider-states"))
+            .WithPactBrokerSource(new Uri("http://localhost:9292"), options =>
+            {
+                options.ConsumerVersionSelectors(new List<ConsumerVersionSelector>
+                {
+                    new ConsumerVersionSelector
+                    {
+                       Branch = "main",
+                       
+                    }
+                });
+                
+            })
             .Verify();
     }
 }
