@@ -8,7 +8,7 @@ public class DeviceManagerApiTests(DeviceManagerApiFixture testFixture)
     private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(30);
 
     [Fact]
-    public async Task GetWebResourceRootReturnsOkStatusCode()
+    public async Task GetAllDevicesReturnsOkStatusCode()
     {
 
         var response = await testFixture.ApiClient.GetAsync("/devices", testFixture.DefaultCancellationToken);

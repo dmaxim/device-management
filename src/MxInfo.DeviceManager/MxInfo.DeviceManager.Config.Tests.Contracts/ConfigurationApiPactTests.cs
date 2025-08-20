@@ -38,14 +38,31 @@ public class ConfigurationApiPactTests
         //     //.WithProviderStateUrl(new Uri($"{_pactServiceUri}/provider-states"))
         //     .Verify();
         
+        // pactVerifier.WithHttpEndpoint(_fixture.ApiClient.BaseAddress)
+        //     .WithPactBrokerSource(new Uri("https://mxinformatics-llc.pactflow.io"), options =>
+        //     {
+        //         options.TokenAuthentication("<token>");
+        //         options.ConsumerVersionSelectors(new List<ConsumerVersionSelector>
+        //         {
+        //             new ConsumerVersionSelector
+        //             {
+        //                Branch = "main",
+        //                
+        //             }
+        //         });
+        //         
+        //     })
+        //     .Verify();
+        
         pactVerifier.WithHttpEndpoint(_fixture.ApiClient.BaseAddress)
-            .WithPactBrokerSource(new Uri("http://localhost:9292"), options =>
+            .WithPactBrokerSource(new Uri("http://localhost:9080"), options =>
             {
+                options.BasicAuthentication("dmaxim", "");
                 options.ConsumerVersionSelectors(new List<ConsumerVersionSelector>
                 {
                     new ConsumerVersionSelector
                     {
-                       Branch = "main",
+                        Branch = "main",
                        
                     }
                 });

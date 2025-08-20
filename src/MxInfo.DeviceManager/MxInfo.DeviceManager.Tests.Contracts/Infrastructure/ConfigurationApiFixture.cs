@@ -14,6 +14,8 @@ public class ConfigurationApiFixture
 {
     public IPactBuilderV3 PactBuilder { get; private set; }
     private const int Port = 9001;
+    public string PactBrokerUri = "https://mxinformatics-llc.pactflow.io";
+
     public bool Initialized { get; private set; } = false;
     
     public void InitializePact(ITestOutputHelper outputHelper)
@@ -30,8 +32,11 @@ public class ConfigurationApiFixture
             //     PropertyNameCaseInsensitive = true
             // }
         };
+        
      
+  
         PactBuilder = Pact.V3("ApiClient", "ConfigurationService", config)
+            
             .WithHttpInteractions(Port);
         
         Initialized = true;
